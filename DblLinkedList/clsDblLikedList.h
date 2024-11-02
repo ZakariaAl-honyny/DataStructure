@@ -269,5 +269,16 @@ public:
 		//this solution is Faster because it is Big O(1) an Algorithm.
 		return (_Size == 0 ? true : false);
 	}
+
+	void Clear()
+	{
+
+		//while (head != NULL)
+		while (_Size > 0)
+		{
+			DeleteFirstNode();
+		}
+
+	}
 };
 
