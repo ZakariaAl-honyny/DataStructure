@@ -77,6 +77,12 @@ int main()
 	cout << "\nLinked List content:\n";
 	MyDblLinkedList.PrintList();
 
+	//Extension_7 InsertAfter() Method (Searsh Nodes By Index) 
+	MyDblLinkedList.InsertAfter(0, 1000);
+
+	cout << "\nLinked List content:\n";
+	MyDblLinkedList.PrintList();
+
 	//Extension_3 Clear() Method
 	cout << "\nExecuting .Clear()\n";
 	MyDblLinkedList.Clear();
