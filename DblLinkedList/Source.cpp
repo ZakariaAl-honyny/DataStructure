@@ -63,9 +63,13 @@ int main()
 	MyDblLinkedList.Reverse();
 	MyDblLinkedList.PrintList();
 
-	//Extension_5 GetNide() Method
+	//Extension_5 GetNode() Method
 	clsDblLikedList<int>::Node* N1 = MyDblLinkedList.GetNode(2);
 	cout << "\nthe Value of a node = " << N1->Value;
+
+	//Extension_6 GetItem() Method
+	int Value = MyDblLinkedList.GetItem(4);
+	cout << "\nthe Value of a item = " << Value;
 
 	//Extension_3 Clear() Method
 	cout << "\nExecuting .Clear()\n";
