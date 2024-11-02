@@ -56,6 +56,10 @@ int main()
 	else
 		cout << "\nNo linked list is not Emtpy.\n";
 
+	cout << "\nAfter reverse the linked list elements:\n";
+	MyDblLinkedList.Reverse();
+	MyDblLinkedList.PrintList();
+
 	cout << "\nExecuting .Clear()\n";
 	MyDblLinkedList.Clear();
 
