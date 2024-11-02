@@ -367,6 +367,19 @@ public:
 		return Current;
 	}
 
+	//Get a item value by Index
+	T GetItem(int Index)
+	{
+
+		Node* ItemNode = GetNode(Index);
+
+		if (ItemNode == NULL)
+			return NULL;
+		else
+			return ItemNode->Value;
+
+	}
+
 };
 
 
