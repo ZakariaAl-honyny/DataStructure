@@ -49,22 +49,31 @@ int main()
 	cout << "\n\After Deleting Last Node\n";
 	MyDblLinkedList.PrintList();
 
+	//Extension_1 Size() Method
 	cout << "\nNumer of items in the linked list = " << MyDblLinkedList.Size() << " item(s).\n";
 
+	//Extension_2 IsEmpty() Method
 	if (MyDblLinkedList.IsEmpty())
 		cout << "\nYes linked list is Emtpy.\n";
 	else
 		cout << "\nNo linked list is not Emtpy.\n";
 
+	//Extension_4 Reverse() Method
 	cout << "\nAfter reverse the linked list elements:\n";
 	MyDblLinkedList.Reverse();
 	MyDblLinkedList.PrintList();
 
+	//Extension_5 GetNide() Method
+	clsDblLikedList<int>::Node* N1 = MyDblLinkedList.GetNode(2);
+	cout << "\nthe Value of a node = " << N1->Value;
+
+	//Extension_3 Clear() Method
 	cout << "\nExecuting .Clear()\n";
 	MyDblLinkedList.Clear();
 
 	cout << "\nNumer of items in the linked list = " << MyDblLinkedList.Size() << " item(s).\n";
 
+	//Extension_2 IsEmpty() Method
 	if (MyDblLinkedList.IsEmpty())
 		cout << "\nYes linked list is Emtpy.\n";
 	else

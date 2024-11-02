@@ -323,7 +323,6 @@ public:
 		}
 
 	}
-
 	//this solution is slower because it is using [ Big O(n) ] on this an Algorithm.
 	//void Reverse()
 	//{
@@ -341,8 +340,45 @@ public:
 	//	if (temp != nullptr) {
 	//		head = temp->Prev;
 	//	}
-
 	//}
 
+	//Get a node by Index
+	Node* GetNode(int Index)
+	{
+
+		int Counter = 0;
+
+		if (Index > _Size - 1 || Index < 0)
+		{
+			return NULL;
+		}
+
+		Node* Current = head;
+		while (Current != NULL && (Current->Next != NULL))
+		{
+
+			if (Counter == Index)
+				break;
+
+			Current = Current->Next;
+			Counter++;
+		}
+
+		return Current;
+	}
+
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
 
