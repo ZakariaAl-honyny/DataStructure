@@ -20,6 +20,7 @@ public:
 	};
 
 	Node* head = NULL;
+	Node* LastNode = NULL;
 
 	void InsertAtBegining(T Value)
 	{
@@ -35,9 +36,14 @@ public:
 		NewNode->Prev = NULL;
 		NewNode->Next = head;
 
-		if (head != NULL)
+		if (head != NULL) 
 		{
 			head->Prev = NewNode;
+		}
+
+		if (head == NULL) 
+		{
+			LastNode = NewNode;
 		}
 
 		head = NewNode;
@@ -84,6 +90,9 @@ public:
 		if (Current->Next != NULL)
 			Current->Next->Prev = NewNode;
 
+		if (Current->Next == NULL)
+			LastNode = NewNode;
+
 		Current->Next = NewNode;
 		_Size++;
 
@@ -106,6 +115,7 @@ public:
 		{
 			NewNode->Prev = NULL;
 			head = NewNode;
+			LastNode = NewNode;
 		}
 		else
 		{
@@ -115,6 +125,7 @@ public:
 				Currenrt = Currenrt->Next;
 			}
 
+			LastNode = NewNode;
 			Currenrt->Next = NewNode;
 			NewNode->Prev = Currenrt;
 		}
@@ -122,7 +133,7 @@ public:
 		_Size++;
 	}
 
-	void DeleteNode(Node* &NodeToDelete)
+	void DeleteNode(int ValueToDelete) // Or this pointer Node* &NodeToDelete
 	{
 		/*
 		1- Set the next pointer of the previous node to the next pointer of the Current node.
@@ -130,7 +141,7 @@ public:
 		3- Delete the Current node.
 		*/
 
-		//Node* NodeToDelete = Find(Value);
+		Node* NodeToDelete = Find(ValueToDelete);
 
 		if (head == NULL || NodeToDelete == NULL) {
 			return;
@@ -146,6 +157,11 @@ public:
 
 		if (NodeToDelete->Prev != NULL) {
 			NodeToDelete->Prev->Next = NodeToDelete->Next;
+		}
+
+		if (NodeToDelete->Next == NULL) 
+		{
+			LastNode = LastNode->Prev;
 		}
 
 		delete NodeToDelete;
@@ -191,6 +207,7 @@ public:
 		if (head->Next == NULL) {
 			delete head;
 			head = NULL;
+			_Size--;
 			return;
 		}
 
@@ -203,6 +220,7 @@ public:
 
 		Node* Temp = Current->Next;
 		Current->Next = NULL;
+		LastNode = Current;
 		delete Temp;
 		_Size--;
 	}
@@ -238,7 +256,7 @@ public:
 
 	int Size()
 	{
-		//this solution is slower because it is Big O(n) an Algorithm.
+		//this solution is slower because it is using [ Big O(n) ] on this an Algorithm.
 		/*int Size = 0;
 		Node* Current = head;
 
@@ -249,13 +267,13 @@ public:
 		}
 		return Size;*/
 
-		//this solution is Faster because it is Big O(1) an Algorithm.
+		//this solution is Faster because it is using [ Big O(1) ] on this an Algorithm.
 		return _Size;
 	}
 
 	bool IsEmpty()
 	{
-		//this solution is slower because it is Big O(n) an Algorithm.
+		//this solution is slower because it is using [ Big O(n) ] on this an Algorithm.
 		/*int Size = 0;
 		Node* Current = head;
 
@@ -266,7 +284,7 @@ public:
 		}
 		return (Size == 0) ? true : false;*/
 
-		//this solution is Faster because it is Big O(1) an Algorithm.
+		//this solution is Faster because it is using [ Big O(1) ] on this an Algorithm.
 		return (_Size == 0 ? true : false);
 	}
 
@@ -280,5 +298,51 @@ public:
 		}
 
 	}
+
+	//this solution is Batter and Faster because it is using [ Big O(log n) and Big 0(1) ] on this an Algorithm.
+	void Reverse()
+	{
+
+		int HalfLoop = (_Size / 2);
+
+		Node* FirstList = head;
+		Node* LastList = LastNode;
+		T Temp = 0;
+
+
+		while (HalfLoop > 0)
+		{
+			Temp = FirstList->Value;
+			FirstList->Value = LastList->Value;
+			LastList->Value = Temp;
+
+			FirstList = FirstList->Next;
+			LastList = LastList->Prev;
+
+			HalfLoop--;
+		}
+
+	}
+
+	//this solution is slower because it is using [ Big O(n) ] on this an Algorithm.
+	//void Reverse()
+	//{
+
+	//	Node* Current = head;
+	//	Node* temp = nullptr;
+
+	//	while (Current != nullptr) {
+	//		temp = Current->Prev;
+	//		Current->Prev = Current->Next;
+	//		Current->Next = temp;
+	//		Current = Current->Prev;
+	//	}
+
+	//	if (temp != nullptr) {
+	//		head = temp->Prev;
+	//	}
+
+	//}
+
 };
 
