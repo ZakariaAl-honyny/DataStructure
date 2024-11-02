@@ -16,6 +16,10 @@ int main()
 	cout << "\nLinked List content:\n";
 	MyDblLinkedList.PrintList();
 
+
+	cout << "\nNumer of items in the linked list = " << MyDblLinkedList.Size() << " item(s).\n";
+
+
 	clsDblLikedList<int>::Node* N1 = MyDblLinkedList.Find(2);
 
 	if (N1 != NULL)
@@ -41,10 +45,12 @@ int main()
 	cout << "\n\After Deleting First Node\n";
 	MyDblLinkedList.PrintList();
 
-
 	MyDblLinkedList.DeleteLastNode();
 	cout << "\n\After Deleting Last Node\n";
 	MyDblLinkedList.PrintList();
+
+
+	cout << "\nNumer of items in the linked list = " << MyDblLinkedList.Size() << " item(s).\n";
 
 	system("pause>0");
 	return 0;

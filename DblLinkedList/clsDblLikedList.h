@@ -6,6 +6,8 @@ using namespace std;
 template<class T>
 class clsDblLikedList
 {
+protected:
+	int _Size = 0;
 
 public:
 
@@ -39,6 +41,7 @@ public:
 		}
 
 		head = NewNode;
+		_Size++;
 	}
 
 	Node* Find(T Value)
@@ -82,6 +85,7 @@ public:
 			Current->Next->Prev = NewNode;
 
 		Current->Next = NewNode;
+		_Size++;
 
 	}
 
@@ -115,7 +119,7 @@ public:
 			NewNode->Prev = Currenrt;
 		}
 
-
+		_Size++;
 	}
 
 	void DeleteNode(Node* &NodeToDelete)
@@ -145,6 +149,8 @@ public:
 		}
 
 		delete NodeToDelete;
+		_Size--;
+
 	}
 
 	void DeleteFirstNode()
@@ -166,6 +172,7 @@ public:
 			head->Prev = NULL;
 		}
 		delete Temp;
+		_Size--;
 
 	}
 
@@ -197,10 +204,10 @@ public:
 		Node* Temp = Current->Next;
 		Current->Next = NULL;
 		delete Temp;
-
+		_Size--;
 	}
 
-	// print the linked list
+	// print the linked list Details
 	void PrintListDetails()
 	{
 		Node* Current = head;
@@ -214,6 +221,7 @@ public:
 		cout << "NULL\n";
 	}
 
+	// print the linked list
 	void PrintList()
 	{
 
@@ -228,5 +236,21 @@ public:
 
 	}
 
+	int Size()
+	{
+		//this solution is slower because it is (Big O(n)) an Algorithm.
+		/*int Size = 0;
+		Node* Current = head;
+
+		while (Current != NULL)
+		{
+			Size++;
+			Current = Current->Next;
+		}
+		return Size;*/
+
+		//this solution is Faster because it is (Big O(1)) an Algorithm.
+		return _Size;
+	}
 };
 
