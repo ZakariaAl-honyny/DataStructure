@@ -380,18 +380,20 @@ public:
 
 	}
 
+	//Get a item vlaue by Index and update value 
+	bool UpdateItem(int Index, T NewValue)
+	{
+
+		Node* ItemNode = GetNode(Index);
+
+		if (ItemNode != NULL)
+		{
+			ItemNode->Value = NewValue;
+			return true;
+		}
+		else
+			return false;
+
+	}
+
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-

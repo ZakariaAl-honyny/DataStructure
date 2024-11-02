@@ -71,6 +71,12 @@ int main()
 	int Value = MyDblLinkedList.GetItem(4);
 	cout << "\nthe Value of a item = " << Value;
 
+	//Extension_7 UpdateItem() Method
+	MyDblLinkedList.UpdateItem(2, 500);
+
+	cout << "\nLinked List content:\n";
+	MyDblLinkedList.PrintList();
+
 	//Extension_3 Clear() Method
 	cout << "\nExecuting .Clear()\n";
 	MyDblLinkedList.Clear();
