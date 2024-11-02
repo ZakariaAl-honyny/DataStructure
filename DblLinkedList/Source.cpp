@@ -56,6 +56,16 @@ int main()
 	else
 		cout << "\nNo linked list is not Emtpy.\n";
 
+	cout << "\nExecuting .Clear()\n";
+	MyDblLinkedList.Clear();
+
+	cout << "\nNumer of items in the linked list = " << MyDblLinkedList.Size() << " item(s).\n";
+
+	if (MyDblLinkedList.IsEmpty())
+		cout << "\nYes linked list is Emtpy.\n";
+	else
+		cout << "\nNo linked list is not Emtpy.\n";
+
 	system("pause>0");
 	return 0;
 }
