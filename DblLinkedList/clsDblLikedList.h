@@ -238,7 +238,7 @@ public:
 
 	int Size()
 	{
-		//this solution is slower because it is (Big O(n)) an Algorithm.
+		//this solution is slower because it is Big O(n) an Algorithm.
 		/*int Size = 0;
 		Node* Current = head;
 
@@ -249,8 +249,25 @@ public:
 		}
 		return Size;*/
 
-		//this solution is Faster because it is (Big O(1)) an Algorithm.
+		//this solution is Faster because it is Big O(1) an Algorithm.
 		return _Size;
+	}
+
+	bool IsEmpty()
+	{
+		//this solution is slower because it is Big O(n) an Algorithm.
+		/*int Size = 0;
+		Node* Current = head;
+
+		while (Current != NULL)
+		{
+			Size++;
+			Current = Current->Next;
+		}
+		return (Size == 0) ? true : false;*/
+
+		//this solution is Faster because it is Big O(1) an Algorithm.
+		return (_Size == 0 ? true : false);
 	}
 };
 

@@ -49,8 +49,12 @@ int main()
 	cout << "\n\After Deleting Last Node\n";
 	MyDblLinkedList.PrintList();
 
-
 	cout << "\nNumer of items in the linked list = " << MyDblLinkedList.Size() << " item(s).\n";
+
+	if (MyDblLinkedList.IsEmpty())
+		cout << "\nYes linked list is Emtpy.\n";
+	else
+		cout << "\nNo linked list is not Emtpy.\n";
 
 	system("pause>0");
 	return 0;
