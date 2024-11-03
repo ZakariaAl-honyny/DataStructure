@@ -70,6 +70,12 @@ int main()
 	MyDynamicArray.PrintList();
 	cout << "\nSize of Array is: " << MyDynamicArray.Size();
 
+	//Extension_10 InsertItemAt() Method
+	MyDynamicArray.InsertItemAt(2, 2000);
+	cout << "\nArray items after inserting 2000 at index 2:\n";
+	cout << "\nArray Size: " << MyDynamicArray.Size() << endl;
+	MyDynamicArray.PrintList();
+
 	//Extension_4 Clear() Method
 	MyDynamicArray.Clear();
 	cout << "\n\nArray items after Clear:\n";
