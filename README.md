@@ -1,2 +1,2 @@
 # DataStructure
-`DataStructure` was programming by using OOP in C++
+`DataStructure` programming by using OOP in C++
