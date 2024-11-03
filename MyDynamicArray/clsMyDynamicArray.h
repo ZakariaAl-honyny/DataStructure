@@ -132,13 +132,13 @@ public:
 		_Size--;
 		_TempArray = new T[_Size];
 
-		//Copy all Item before index
+		//Copy all Items before index
 		for (int i = 0; i < Index; i++)
 		{
 			_TempArray[i] = OriginalArray[i];
 		}
 
-		//Copy all Item after index
+		//Copy all Items after index
 		for (int i = Index + 1; i < _Size + 1; i++)
 		{
 			_TempArray[i - 1] = OriginalArray[i];
@@ -185,6 +185,37 @@ public:
 		}
 
 		DeleteItemAt(Index);
+		return true;
+
+	}
+
+	bool InsertItemAt(int Index, T Value)
+	{
+
+		if (Index >= _Size || _Size < 0)
+		{
+			return false;
+		}
+
+		_Size++;
+		_TempArray = new T[_Size];
+
+		//Copy all items before index
+		for (int i = 0; i < Index; i++)
+		{
+			_TempArray[i] = OriginalArray[i];
+		}
+
+		_TempArray[Index] = Value;
+
+		//Copy all items after index
+		for (int i = Index; i < _Size; i++)
+		{
+			_TempArray[i + 1] = OriginalArray[i];
+		}
+
+		delete OriginalArray;
+		OriginalArray = _TempArray;
 		return true;
 
 	}
