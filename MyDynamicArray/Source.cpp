@@ -5,7 +5,7 @@ using namespace std;
 
 int main()
 {
-	clsMyDynamicArray <int> MyDynamicArray(10);
+	clsMyDynamicArray <int> MyDynamicArray(5);
 
 	MyDynamicArray.SetItem(0, 10);
 	MyDynamicArray.SetItem(1, 20);
@@ -16,8 +16,20 @@ int main()
 	cout << "\nMy Dynamic Array: \n";
 	MyDynamicArray.PrintList();
 
-	cout << "\nSize of stack is: " << MyDynamicArray.Size();
+	cout << "\nSize of Array is: " << MyDynamicArray.Size();
 	cout << "\nis array empty: " << MyDynamicArray.IsEmpty();
+
+	//Extension_1 ReSize() Method
+	MyDynamicArray.ReSize(2);
+	cout << "\n\nDynamic Array after resize to 2: \n";
+	MyDynamicArray.PrintList();
+	cout << "Size of Array is: " << MyDynamicArray.Size();
+
+	MyDynamicArray.ReSize(10);
+	cout << "\n\nDynamic Array after resize to 10: \n";
+	MyDynamicArray.PrintList();
+	cout << "Size of Array is: " << MyDynamicArray.Size();
+
 
 	system("pause>0");
 	return 0;
