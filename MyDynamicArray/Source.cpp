@@ -57,6 +57,19 @@ int main()
 	MyDynamicArray.PrintList();
 	cout << "\nSize of Array is: " << MyDynamicArray.Size();
 
+	//Extension_8 Find() Method
+	int Index = MyDynamicArray.Find(30);
+	if (Index == -1)
+		cout << "\n\nItem was not Found :-(\n";
+	else
+		cout << "\n\n30 is Found at Index : " << Index;
+
+	//Extension_9 DeleteItem() Method
+	MyDynamicArray.DeleteItem(30);
+	cout << "\n\nArray items after deleting 30:\n";
+	MyDynamicArray.PrintList();
+	cout << "\nSize of Array is: " << MyDynamicArray.Size();
+
 	//Extension_4 Clear() Method
 	MyDynamicArray.Clear();
 	cout << "\n\nArray items after Clear:\n";
