@@ -30,6 +30,18 @@ int main()
 	MyDynamicArray.PrintList();
 	cout << "Size of Array is: " << MyDynamicArray.Size();
 
+	//Extension_2 GetItem() Method
+	cout << "\n\nItem(2): " << MyDynamicArray.GetItem(1);
+
+	//Extension_3 Reverse() Method
+	MyDynamicArray.Reverse();
+	cout << "\n\nArray items after reverse:\n";
+	MyDynamicArray.PrintList();
+
+	//Extension_4 Clear() Method
+	MyDynamicArray.Clear();
+	cout << "\n\nArray items after Clear:\n";
+	MyDynamicArray.PrintList();
 
 	system("pause>0");
 	return 0;

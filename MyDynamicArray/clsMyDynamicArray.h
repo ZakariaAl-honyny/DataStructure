@@ -78,4 +78,56 @@ public:
 		OriginalArray = _TempArray;
 
 	}
+
+	T GetItem(int Index)
+	{
+		return OriginalArray[Index];
+	}
+
+	// This Solution is faster because it is Using [ Big O(log n) ] an Algorithm
+	void Reverse()
+	{
+		int Middle = (_Size / 2);
+		T Temp = 0;
+		for (int i = 0; i < Middle; i++)
+		{
+			Temp = OriginalArray[i];
+			OriginalArray[i] = OriginalArray[_Size - i - 1];
+			OriginalArray[_Size - i - 1] = Temp;
+
+		}
+	}
+
+	// This Another Solution is Lower because it is Using [ Big O(n) ] an Algorithm
+	/*void Reverse()
+	{
+		int Counter = 0;
+		_TempArray = new T[_Size];
+
+		for (int i = _Size - 1; i >= 0; i--)
+		{
+			_TempArray[Counter] = OriginalArray[i];
+			Counter++;
+		}
+
+		delete[] OriginalArray;
+		OriginalArray = _TempArray;
+	}*/
+
+	void Clear()
+	{
+		_Size = 0;
+		_TempArray = new T[0];
+		delete OriginalArray;
+		OriginalArray = _TempArray;
+	}
+
 };
+
+
+
+
+
+
+
+
